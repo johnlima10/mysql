@@ -65,37 +65,37 @@ create table reserva_de_mesa(
 );
 
 create table padeiro(
-	id_de_mesa int primary key,
-	num_de_pessoa char(13),
-	preferencia varchar(50),
-	id_da_padaria int,
-	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	resp_pelo_processo int primary key,
+	treinamento char(13),
+	supervisao varchar(50),
+	id_do_funcionario int,
+	foreign key (id_do_funcionario) references funcionario(id_do_funcionario)
 	
 );
 
 create table atendente(
-	id_de_mesa int primary key,
-	num_de_pessoa char(13),
-	preferencia varchar(50),
-	id_da_padaria int,
-	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	ver_validade_produto int primary key,
+	atendimento char(13),
+	rep_de_produto varchar(50),
+	id_do_funcionario int,
+	foreign key (id_do_funcionario) references funcionario(id_do_funcionario)
 	
 );
 
 create table caixa(
-	id_de_mesa int primary key,
-	num_de_pessoa char(13),
-	preferencia varchar(50),
-	id_da_padaria int,
-	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	elab_relatorio int primary key,
+	pagamento char(13),
+	recibo varchar(50),
+	id_do_funcionario int,
+	foreign key (id_do_funcionario) references funcionario(id_do_funcionario)
 	
 );
 
 create table gerente(
-	id_de_mesa int primary key,
-	num_de_pessoa char(13),
-	preferencia varchar(50),
-	id_do_padaria int,
-	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	ger_ativ_diaria int primary key,
+	sac char(13),
+	financeiro_geral varchar(50),
+	id_do_funcionario int,
+	foreign key (id_do_funcionario) references funcionario(id_do_funcionario)
 	
 );
