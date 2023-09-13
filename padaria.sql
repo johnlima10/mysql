@@ -63,3 +63,39 @@ create table reserva_de_mesa(
 	hora time)
 	
 );
+
+create table padeiro(
+	id_de_mesa int primary key,
+	num_de_pessoa char(13),
+	preferencia varchar(50),
+	id_da_padaria int,
+	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	
+);
+
+create table atendente(
+	id_de_mesa int primary key,
+	num_de_pessoa char(13),
+	preferencia varchar(50),
+	id_da_padaria int,
+	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	
+);
+
+create table caixa(
+	id_de_mesa int primary key,
+	num_de_pessoa char(13),
+	preferencia varchar(50),
+	id_da_padaria int,
+	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	
+);
+
+create table gerente(
+	id_de_mesa int primary key,
+	num_de_pessoa char(13),
+	preferencia varchar(50),
+	id_do_padaria int,
+	foreign key (id_da_padaria) references padaria(id_da_padaria)
+	
+);
