@@ -136,8 +136,8 @@ select * from padaria
 
 insert into cliente(id_cliente, nome, email, telefone, id_da_padaria)
 values
-(1, 'Jonathan Lima', 'john@hotmail.com', '98519-4433', 150),
-(2, 'Maria José', 'mariaj@yahoo.com', '92489-7833', 151)
+(1, 'Jonathan Lima', 'john@hotmail.com', '84988581245', 150),
+(2, 'Maria José', 'mariaj@yahoo.com', '84987586874', 151)
 
 select * from cliente
 
@@ -151,7 +151,13 @@ select * from produto
 insert into funcionario(id_do_funcionario, nome, id_da_padaria)
 values
 (1000, 'José Maria Nascimento', 150),
-(1001, 'Maria Eduarda Castro', 151)
+(1001, 'Maria Eduarda Castro', 151),
+(1002, 'João Maria Silva', 150),
+(1003, 'Luana Silva Mendes', 151),
+(1004, 'Jonas Castro Lima', 150),
+(1005, 'Jefferson Luís Lima', 151),
+(1006, 'Eva Lucia Silva', 150),
+(1007, 'Cleonice Fereira Silva', 151)
 
 select * from funcionario
 
@@ -175,3 +181,52 @@ values
 (24, '84987586874', 'Mesa externa', '2023/09/14', '10:30')
 
 select * from reserva_de_mesa
+
+insert into area_do_cafe(id_area_cafe, id_cliente, id_de_mesa)
+values
+(001, 1, 23),
+(002, 2, 24)
+
+select * from area_do_cafe
+
+insert into loja(id_do_pedido, id_do_produto, ped_presencial, ped_virtual)
+values
+(150, 25, '1500',''),
+(151, 26, '1501','')
+
+select * from loja
+
+insert into rastreio(cod_de_rastreio, id_cliente, id_do_pedido)
+values
+(0001, 1, 150),
+(0002, 2, 151)
+
+select * from rastreio
+
+insert into atendente(ver_validade_produto, atendimento, rep_de_produto, id_do_funcionario)
+values
+('Faz a verificação da validade dos produtos', 'Faz o atendimento dos clientes', 'Faz a reposição dos produtos', 1000),
+('Faz a verificação da validade dos produtos', 'Faz o atendimento dos clientes', 'Faz a reposição dos produtos', 1001)
+
+select * from atendente
+
+insert into caixa(elab_relatorio, pagamento, recibo, id_do_funcionario)
+values
+('Faz a elaboração de relatórios', 'Recebe o pagamento dos clientes', 'Entrega o recibo aos clientes', 1002),
+('Faz a elaboração de relatórios', 'Recebe o pagamento dos clientes', 'Entrega o recibo aos clientes', 1003)
+
+select * from caixa
+
+insert into gerente(ger_ativ_diaria, sac, financeiro_geral, id_do_funcionario)
+values
+('Faz o gerenciamentos das atividades diárias', 'É responsável pelo SAC', 'É responsável pelo financeiro geral', 1004),
+('Faz o gerenciamentos das atividades diárias', 'É responsável pelo SAC', 'É responsável pelo financeiro geral', 1005)
+
+select * from gerente
+
+insert into padeiro(resp_pelo_processo, treinamento, supervisao, id_do_funcionario)
+values
+('É responsável pelo processo de produção', 'Faz o treinamento de funcionários', 'Supervisiona o processo de produção', 1006),
+('É responsável pelo processo de produção', 'Faz o treinamento de funcionários', 'Supervisiona o processo de produção', 1007)
+
+select * from padeiro
