@@ -39,6 +39,9 @@ create table funcionario(
 	id_da_padaria int,
 	foreign key (id_da_padaria) references padaria(id_da_padaria)
 );
+select funcionario.nome, count(funcionario.nome) as quantidade_funcionarios --Agrupando numa coluna provisória para consulta quantidade_funcionarios
+from funcionario
+group by funcionario.nome
 
 create table endereco(
 	id_do_endereco int primary key,
@@ -116,6 +119,10 @@ create table rastreio(
 	foreign key (id_cliente) references cliente(id_cliente),
 	foreign key (id_do_pedido) references pedido(id_do_pedido)
 );
+select cliente.nome, cliente.telefone, cliente.email  --O que deseja mostrar
+from cliente
+join rastreio on cliente.id_cliente = rastreio.id_cliente 
+where rastreio.cod_de_rastreio ='0002';
 
 create table area_do_cafe(
 	id_area_cafe int primary key,
@@ -150,6 +157,7 @@ select * from produto
 
 insert into funcionario(id_do_funcionario, nome, id_da_padaria)
 values
+
 (1000, 'José Maria Nascimento', 150),
 (1001, 'Maria Eduarda Castro', 151),
 (1002, 'João Maria Silva', 150),
@@ -160,6 +168,7 @@ values
 (1007, 'Cleonice Fereira Silva', 151)
 
 select * from funcionario
+--WHERE id_do_funcionario LIKE '%01';
 
 insert into endereco(id_do_endereco, rua, numero, bairro, complemento, cep, cidade, uf, id_da_padaria)
 values
