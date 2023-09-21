@@ -155,6 +155,8 @@ values
 
 select * from produto
 
+select AVG(preco) as Custo_Medio FROM produto
+
 insert into funcionario(id_do_funcionario, nome, id_da_padaria)
 values
 
@@ -183,6 +185,9 @@ values
 (151, '2023/09/13', '08:00', 1)
 
 select * from pedido
+
+select * from cliente
+where telefone like '92%' --buscando número inciando com 92
 
 insert into reserva_de_mesa(id_de_mesa, num_de_pessoa, preferencia, data_reserva, hora)
 values
